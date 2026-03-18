@@ -1,0 +1,310 @@
+
+
+
+
+Revision of C and C++
+
+Here’s a quick revision of C & C++ (easy to memorize + examples) 👇
+
+🔹 C Language Revision
+1. Basics
+C is a procedural language (step-by-step execution)
+
+Structure: main() is the entry point
+
+Example:
+
+#include <stdio.h>
+int main() {
+    printf("Hello");
+    return 0;
+}
+2. Data Types
+int, float, char, double
+
+Example:
+
+int a = 10;
+float b = 5.5;
+char c = 'A';
+3. Control Statements
+if, else, switch, loops (for, while)
+
+Example:
+
+if(a > 5) {
+    printf("Greater");
+}
+4. Functions
+Reusable block of code
+
+Example:
+
+int add(int x, int y) {
+    return x + y;
+}
+5. Arrays & Strings
+Store multiple values
+
+Example:
+
+int arr[3] = {1,2,3};
+char str[] = "Alok";
+6. Pointers
+Store address of variable
+
+Example:
+
+int a = 10;
+int *p = &a;
+7. Structure
+User-defined data type
+
+Example:
+
+struct student {
+    int id;
+};
+🔹 C++ Revision
+1. OOP Concepts
+Class & Object
+
+Example:
+
+class Student {
+public:
+    int id;
+};
+2. Encapsulation
+Data + methods in one unit
+
+3. Inheritance
+One class uses another
+
+Example:
+
+class A {};
+class B : public A {};
+4. Polymorphism
+Same function, different behavior
+
+Example (Function Overloading):
+
+int add(int a, int b);
+float add(float a, float b);
+5. Constructor
+Automatically called when object created
+
+Example:
+
+class A {
+public:
+    A() {
+        cout << "Constructor";
+    }
+};
+6. Difference (C vs C++)
+C	C++
+Procedural	Object-Oriented
+No classes	Classes available
+No inheritance	Supports inheritance
+🔹 Quick Memory Trick
+C = Functions + Pointers + Structure
+
+C++ = C + OOP (Class, Inheritance, Polymorphism)
+
+If you want, I can make exam-ready short notes (2 lines each) or important viva questions for C/C++ 👍
+
+
+Revision of Object and class concept. SHORT
+
+Here’s a very short revision (easy to memorize) 👇
+
+🔹 Object
+Object = Instance of a class (real-world entity)
+
+It contains data + functions
+
+Example:
+Car c1; → c1 is object
+
+🔹 Class
+Class = Blueprint/template to create objects
+
+Defines variables + methods
+
+Example:
+
+class Car {
+public:
+    int speed;
+};
+🔹 Key Point
+Class = Design
+
+Object = Real implementation
+
+👉 Example in one line:
+
+Class = “Car design”
+
+Object = “My car (actual)”
+
+
+Unit - 1 Installation of C#
+Unit - 2 Write a program to print “Hello world”
+
+Here’s your short, exam-ready revision 👇
+
+🔹 Unit – 1: Installation of C#
+Install .NET SDK and Visual Studio / VS Code
+
+Create project using: dotnet new console
+
+Run program using: dotnet run
+
+🔹 Unit – 2: Hello World Program
+Program:
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello World");
+    }
+}
+🔹 Output
+Hello World
+👉 Memory Tip:
+
+using System → library
+
+Main() → entry point
+
+Console.WriteLine() → print output
+
+
+Unit - 2  1 Write a program to input 2 number and an arithmetic
+operator. Display the result accordingly.
+Unit - 2  3 Write a program to input Principal Amount,Rate and Year
+and display Simple Interest.
+
+Here are short, exam-ready C# programs 👇
+
+🔹 1. Arithmetic Operation Program
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int a, b;
+        char op;
+
+        Console.Write("Enter first number: ");
+        a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter second number: ");
+        b = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter operator (+,-,*,/): ");
+        op = Convert.ToChar(Console.ReadLine());
+
+        if (op == '+') Console.WriteLine("Result = " + (a + b));
+        else if (op == '-') Console.WriteLine("Result = " + (a - b));
+        else if (op == '*') Console.WriteLine("Result = " + (a * b));
+        else if (op == '/') Console.WriteLine("Result = " + (a / b));
+        else Console.WriteLine("Invalid Operator");
+    }
+}
+🔹 3. Simple Interest Program
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double p, r, t, si;
+
+        Console.Write("Enter Principal: ");
+        p = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter Rate: ");
+        r = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter Time: ");
+        t = Convert.ToDouble(Console.ReadLine());
+
+        si = (p * r * t) / 100;
+
+        Console.WriteLine("Simple Interest = " + si);
+    }
+}
+🔹 Quick Formula (Important)
+SI = (P × R × T) / 100
+
+👉 If you want, I can give all Unit-2 programs in one PDF for your exam 👍
+
+
+Write a program to input Principal Amount, Rate and Year
+and display Compound Interest.
+Unit 2 - 5 
+
+Write a program to input radius of a circle, and print area of
+that circle.
+
+Here are short, exam-ready C# programs 👇
+
+🔹 5. Compound Interest Program
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double p, r, t, ci, amount;
+
+        Console.Write("Enter Principal: ");
+        p = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter Rate: ");
+        r = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter Time (years): ");
+        t = Convert.ToDouble(Console.ReadLine());
+
+        amount = p * Math.Pow((1 + r / 100), t);
+        ci = amount - p;
+
+        Console.WriteLine("Compound Interest = " + ci);
+    }
+}
+🔹 Radius of Circle (Area Program)
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double r, area;
+
+        Console.Write("Enter radius: ");
+        r = Convert.ToDouble(Console.ReadLine());
+
+        area = 3.14 * r * r;
+
+        Console.WriteLine("Area of Circle = " + area);
+    }
+}
+🔹 Quick Formulas
+CI = P(1 + R/100)^T − P
+
+Area of Circle = π × r²
+
+👉 If you want, I can give all Unit-2 programs (1–10) in one place for revision 👍
+
+
+
+
