@@ -1,0 +1,53 @@
+using System;
+
+class Employee
+{
+    int employeeId;
+    string name;
+    double salary;
+
+    // Default Constructor
+    public Employee()
+    {
+        employeeId = 0;
+        name = "Unknown";
+        salary = 0;
+    }
+
+    // Parameterized Constructor
+    public Employee(int id, string n, double s)
+    {
+        employeeId = id;
+        name = n;
+        salary = s;
+    }
+
+    // Method to calculate annual salary
+    public double AnnualSalary()
+    {
+        return salary * 12;
+    }
+
+    // Method to display details
+    public void Display()
+    {
+        Console.WriteLine("ID = " + employeeId);
+        Console.WriteLine("Name = " + name);
+        Console.WriteLine("Monthly Salary = " + salary);
+        Console.WriteLine("Annual Salary = " + AnnualSalary());
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Default object
+        Employee e1 = new Employee();
+        e1.Display();
+
+        // Parameterized object
+        Employee e2 = new Employee(101, "Alok", 20000);
+        e2.Display();
+    }
+}
