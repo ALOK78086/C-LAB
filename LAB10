@@ -1,0 +1,113 @@
+🔹 1. Bill with Discount Based on Customer Category
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double bill, discount = 0, finalBill;
+        string category;
+
+        Console.Write("Enter bill amount: ");
+        bill = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter category (senior / regular / industrial): ");
+        category = Console.ReadLine().ToLower();
+
+        if (category == "senior")
+            discount = bill * 0.20;
+        else if (category == "regular")
+            discount = bill * 0.10;
+        else if (category == "industrial")
+            discount = bill * 0.15;
+        else
+            Console.WriteLine("Invalid Category");
+
+        finalBill = bill - discount;
+
+        Console.WriteLine("Discount = " + discount);
+        Console.WriteLine("Final Bill = " + finalBill);
+    }
+}
+
+Example:
+Bill = 1000, category = senior → Discount = 200, Final Bill = 800
+
+🔹 2. Loan Eligibility Using Nested Conditions
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int age, creditScore;
+        double income;
+
+        Console.Write("Enter age: ");
+        age = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter income: ");
+        income = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter credit score: ");
+        creditScore = Convert.ToInt32(Console.ReadLine());
+
+        if (age >= 21)
+        {
+            if (income >= 25000)
+            {
+                if (creditScore >= 700)
+                    Console.WriteLine("Loan Approved");
+                else
+                    Console.WriteLine("Loan Rejected: Low Credit Score");
+            }
+            else
+            {
+                Console.WriteLine("Loan Rejected: Low Income");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Loan Rejected: Age Not Eligible");
+        }
+    }
+}
+
+Example:
+Age = 25, Income = 30000, Credit Score = 750 → Loan Approved
+
+🔹 3. Verify PIN and Withdraw Amount
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int pin, correctPin = 1234;
+        double balance = 5000, amount;
+
+        Console.Write("Enter PIN: ");
+        pin = Convert.ToInt32(Console.ReadLine());
+
+        if (pin == correctPin)
+        {
+            Console.Write("Enter withdrawal amount: ");
+            amount = Convert.ToDouble(Console.ReadLine());
+
+            if (amount <= balance)
+            {
+                balance = balance - amount;
+                Console.WriteLine("Withdrawal Successful");
+                Console.WriteLine("Remaining Balance = " + balance);
+            }
+            else
+            {
+                Console.WriteLine("Insufficient Balance");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid PIN");
+        }
+    }
+}
