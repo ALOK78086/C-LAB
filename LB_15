@@ -1,0 +1,101 @@
+using System;
+
+// Base Class
+class Account
+{
+    public int accNo;
+    public string name;
+    public double balance;
+
+    public Account(int a, string n, double b)
+    {
+        accNo = a;
+        name = n;
+        balance = b;
+    }
+
+    public virtual void Deposit(double amount)
+    {
+        balance += amount;
+        Console.WriteLine("Deposited: " + amount);
+    }
+
+    public virtual void Withdraw(double amount)
+    {
+        if (amount <= balance)
+        {
+            balance -= amount;
+            Console.WriteLine("Withdrawn: " + amount);
+        }
+        else
+        {
+            Console.WriteLine("Insufficient Balance");
+        }
+    }
+
+    public void Display()
+    {
+        Console.WriteLine("Acc No = " + accNo);
+        Console.WriteLine("Name = " + name);
+        Console.WriteLine("Balance = " + balance);
+    }
+}
+
+// Derived Class: Savings
+class Savings : Account
+{
+    public double interestRate;
+
+    public Savings(int a, string n, double b, double i) : base(a, n, b)
+    {
+        interestRate = i;
+    }
+
+    public override void Deposit(double amount)
+    {
+        base.Deposit(amount);
+        double interest = balance * interestRate / 100;
+        balance += interest;
+        Console.WriteLine("Interest Added: " + interest);
+    }
+}
+
+// Derived Class: Current
+class Current : Account
+{
+    public double overdraftLimit;
+
+    public Current(int a, string n, double b, double o) : base(a, n, b)
+    {
+        overdraftLimit = o;
+    }
+
+    public override void Withdraw(double amount)
+    {
+        if (amount <= balance + overdraftLimit)
+        {
+            balance -= amount;
+            Console.WriteLine("Withdrawn: " + amount);
+        }
+        else
+        {
+            Console.WriteLine("Limit Exceeded");
+        }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Savings s = new Savings(101, "Alok", 5000, 5);
+        s.Deposit(1000);
+        s.Display();
+
+        Console.WriteLine();
+
+        Current c = new Current(102, "Ram", 3000, 2000);
+        c.Withdraw(4500);
+        c.Display();
+    }
+}
