@@ -1,0 +1,10 @@
+using System;
+class Program
+{
+    static void Main()
+    {
+        double r = 7;
+        Console.WriteLine("Area = " + (3.14 * r * r));
+        Console.WriteLine("Circumference = " + (2 * 3.14 * r));
+    }
+}
