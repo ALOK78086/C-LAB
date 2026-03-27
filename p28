@@ -1,0 +1,17 @@
+// Write a program to find power of a number
+using System;
+class Program
+{
+    static void Main()
+    {
+        int baseNum, exp, result = 1;
+        Console.Write("Enter base and exponent: ");
+        baseNum = Convert.ToInt32(Console.ReadLine());
+        exp = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i <= exp; i++)
+            result *= baseNum;
+
+        Console.WriteLine("Power = " + result);
+    }
+}
