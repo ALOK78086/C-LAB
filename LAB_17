@@ -1,0 +1,55 @@
+// Write a program to implement interfaces Pass and Division
+
+using System;
+
+// Interface 1
+interface Pass
+{
+    bool PassMark(int mark);
+}
+
+// Interface 2
+interface Division
+{
+    string GetDivision(int average);
+}
+
+// Class implementing both interfaces
+class Result : Pass, Division
+{
+    // Pass method
+    public bool PassMark(int mark)
+    {
+        if (mark >= 50)
+            return true;
+        else
+            return false;
+    }
+
+    // Division method
+    public string GetDivision(int avg)
+    {
+        if (avg >= 60)
+            return "First Division";
+        else if (avg >= 50)
+            return "Second Division";
+        else if (avg >= 40)
+            return "Third Division";
+        else
+            return "Fail";
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Result r = new Result();
+
+        int marks = 55;
+        int avg = 65;
+
+        Console.WriteLine("Pass Status = " + r.PassMark(marks));
+        Console.WriteLine("Division = " + r.GetDivision(avg));
+    }
+}
