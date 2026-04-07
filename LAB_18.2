@@ -1,0 +1,21 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            int[] arr = { 1, 2, 3 };
+            Console.WriteLine(arr[5]);  
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error: " + e.Message);
+        }
+        finally
+        {
+            Console.WriteLine("Finally block always executes");
+        }
+    }
+}
